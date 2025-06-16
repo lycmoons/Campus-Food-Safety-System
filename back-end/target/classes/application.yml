@@ -1,0 +1,49 @@
+spring:
+  # 请求上传文件大小限制
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  # 官方邮箱
+  mail:
+    host: smtp.163.com
+    username: lycmoons@163.com
+    password: MVWFFe56fbasKFs9   # 邮箱应用专用密码，定期更改
+
+  # rabbitmq 消息队列
+  rabbitmq:
+    addresses: localhost
+    username: guest
+    password: guest
+    virtual-host: /
+    port: 5672
+
+  # security
+  security:
+    # filter 链
+    filter:
+      order: -100
+    # jwt 令牌
+    jwt:
+      key: lycmoons
+      expire: 7
+
+  # mysql 数据库
+  datasource:
+    url: jdbc:mysql://localhost:3306/foodSafety
+    username: root
+    password: 543416Liu*      # 本地测试：改密码
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # redis 数据库
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password:
+      database: 0
+
+  serverip: 81.68.71.52                 # 本地测试：localhost
+  upload-path: /var/back-end/uploads    # 本地测试：/Users/aidon/Desktop/uploads
+  upload-directory: uploads
